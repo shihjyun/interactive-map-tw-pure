@@ -38,6 +38,7 @@ async function drawTaiwanTownMap() {
     .attr("class", "county")
     .attr("id", d => d.properties['COUNTYNAME'])
     .attr("fill", "#25877F")
+    .attr("opacity", 1)
     .attr("stroke", "#333")
     .attr("stroke-width", 0.5)
     .attr("d", twGeoPath)
