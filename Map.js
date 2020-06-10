@@ -4,8 +4,8 @@
 // draw map function (render basic geo path to DOM)
 async function drawTaiwanTownMap() {
   // canvas dimension
-  const width = 600;
-  const height = 700;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
   // data input
   const response = await fetch("./data/tw_town_geo.json")
@@ -14,8 +14,9 @@ async function drawTaiwanTownMap() {
 
   // projection setting
   const twProjection = d3.geoMercator()
-      .scale(6000)
-      .center([122, 23.84394])
+      .translate([width / 2, height / 2])
+      .scale(10000)
+      .center([121, 23.84394])
 
   const twgeoPath = d3.geoPath()
       .projection( twProjection );
